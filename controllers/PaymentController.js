@@ -15,6 +15,7 @@ export const checkout = async (req, res) => {
         order,
     });
 };
+console.log(Order)
 
 export const PaymentVerification = async (req, res) => {
     const { razorpay_order_id, razorpay_payment_id, razorpay_signature } = req.body
@@ -40,7 +41,7 @@ export const PaymentVerification = async (req, res) => {
             razorpay_order_id,
             razorpay_payment_id,
             razorpay_signature,
-            status: 'Order Placed'
+            status: 'Order Placed',
         })
 
         res.redirect(`http://localhost:5173/paymentsuccess?reference=${razorpay_payment_id}&orderId=${razorpay_order_id}`)

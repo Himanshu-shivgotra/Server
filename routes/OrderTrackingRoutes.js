@@ -42,7 +42,7 @@ router.route("/update/:orderId").put(async (req, res) => {
 // New route to get all orders
 router.route("/").get(async (req, res) => {
     try {
-        const orders = await Order.find(); // Adjust query to filter orders by user if needed
+        const orders = await Order.find();
         res.status(200).json({ success: true, orders });
     } catch (error) {
         res.status(500).json({ success: false, message: "Server error", error });
