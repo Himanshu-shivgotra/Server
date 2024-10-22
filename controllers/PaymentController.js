@@ -44,7 +44,7 @@ export const PaymentVerification = async (req, res) => {
             status: 'Order Placed',
         })
 
-        res.redirect(`http://localhost:5173/paymentsuccess?reference=${razorpay_payment_id}&orderId=${razorpay_order_id}`)
+        res.redirect(`https://server-frontend-lac.vercel.app/paymentsuccess?reference=${razorpay_payment_id}&orderId=${razorpay_order_id}`)
 
     } else {
         res.status(400).json({
